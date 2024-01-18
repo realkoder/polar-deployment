@@ -33,3 +33,14 @@ docker-compose down
 
 ## To access remote debugger if it´s enabled within `docker-compose.yml` file:
 ![Remote Debugger Config](img/ConfigRemoteDebugger.png)
+
+# The docker-compose.yml
+```yaml
+    volumes: # Mount the initialization SQL script to the container as a volume
+      - ./postgresql/init.sql:/docker-entrypoint-initdb.d/init.sql
+```
+The provided piece from the yaml file defines
+a volume which allocates space for storing backup for 
+the running dbs on physical memory local machine.
+Kubernetes doesn't deal with data persistence which
+makes the volumes very efficient.
