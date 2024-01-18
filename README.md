@@ -44,3 +44,13 @@ a volume which allocates space for storing backup for
 the running dbs on physical memory local machine.
 Kubernetes doesn't deal with data persistence which
 makes the volumes very efficient.
+
+#### Build and run all the docker images with Tilt
+Make sure that minikube is started with profile polar:
+```bash
+minikube start --profile polar
+```
+And then execute `tilt up`:
+```bash
+tilt -f kubernetes/applications/development/Tiltfile up
+```
