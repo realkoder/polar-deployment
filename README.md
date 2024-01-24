@@ -54,3 +54,21 @@ And then execute `tilt up`:
 ```bash
 tilt -f kubernetes/applications/development/Tiltfile up
 ```
+
+Terminate tilt by executing:
+```bash
+tilt -f kubernetes/applications/development/Tiltfile down
+```
+
+To apply changes to yaml files for minikube cluster navigate
+to the path `kubernetes/platform/development`and execute:
+```bash
+kubectl apply -f services
+```
+
+Load an image to the minikube cluster
+(this example is for the repo `edge-service`):
+```bash
+./gradlew bootBuildImage
+minikube image load edge-service --profile polar
+```
