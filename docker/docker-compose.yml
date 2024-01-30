@@ -65,3 +65,12 @@ services:
     container_name: "polar-redis"
     ports:
       - 6379:6379
+
+  polar-rabbitmq:
+    image: rabbitmq:3.10-management
+    container_name: polar-rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672  # Access the rabbitmq site -> localhost:15672 and signin with the credentials defined in rabbitmq.conf file
+    volumes:
+      - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
