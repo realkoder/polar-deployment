@@ -71,6 +71,6 @@ services:
     container_name: polar-rabbitmq
     ports:
       - 5672:5672
-      - 15672:15672  # Access the rabbitmq site -> localhost:15672 and signin with the credentials defined in rabbitmq.conf file
+      - 15672:15672  # Access the rabbitmq site -> localhost:15672 and sign-in with the credentials defined in rabbitmq.conf file
     volumes:
       - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
